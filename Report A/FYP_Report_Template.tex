@@ -8,6 +8,10 @@
 \usepackage{subfig}
 \usepackage{hyperref}
 \usepackage[parfill]{parskip}   % For replacing paragraph indenting with a newline instead
+\usepackage{pdfpages}
+\usepackage[australian]{babel} % This line sets the language to Australian English
+
+
 
 % Number equations per section
 \numberwithin{equation}{section}
@@ -47,42 +51,38 @@
     %numbers=left,
     basewidth=0.5em}
 
+
+
 \firstpage{1}    % Set page number for first page
 \UoNMCHAreportNo{MECH4841 Part A [B]} %Report number
 \UoNMCHAyear{2013}   % Year
 \shorttitle{FYP Report - Short Title} %For odd pages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Include the PDF title page
+
+
 \begin{document}
-\title{Insert the Title Here \\ \ \\
-{\small Final Year Project Report - MECH4841 Part A [B]  \\November 2013}}
-\author[UoNMCHA]{Student Name}
+\title{Autonomous Object Evasion, and Capture Using the Quanser QDrone\\ \ \\
+{\small Final Year Project Report - ENGG4801A \\May 2024}}
+\author[UoNMCHA]{Evan Byrne}
 \address[UoNMCHA]{
 Student of Mechatronics Engineering,\\
 The University of Newcastle, Callaghan, NSW 2308, AUSTRALIA \\
-Student Number: 3...... \\
-E-mail: \href{mailto:First.Last@uon.edu.au}{\textsf{First.Last@uon.edu.au}}}
+Student Number: 3349681 \\
+E-mail: \href{mailto:Evan.Byrne@uon.edu.au}{\textsf{Evan.Byrne@uon.edu.au}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
 \onecolumn
 
 \vspace{-5mm}
-\section*{Executive summary or Abstract}
-\vspace{-3mm}
-Remember that executive summary may include the following information:
-\begin{itemize}
-    \item Defines the intention of the report.
-    \item Places the report in context so the reader knows why it is important to read it.
-    \item Why is it important?
-    \item What problem is addressed?
-    \item Briefly states the results
-    \item Briefly presents the implications and recommendations
-\end{itemize}
-Executive summaries can take from a couple of paragraphs to a couple of pages.
-%%%%%%%%%%%%%%
-\vspace{-2mm}
-\section*{Acknowledgements}
-\vspace{-3mm}
-You may like to say thank you to someone that helped you with your project.
+\section*{Abstract}
+\vspace{5mm}
+This report focuses on a project in which the Quanser QDrone \cite{website:Quanser} is required to detect an object and autonomously recognize and maneuver to either avoid or catch it. This project explores various control systems and advanced object detection capabilities of current unmanned aerial vehicles (UAVs), aiming to enhance trajectory estimation for practical applications such as automated package retrieval and delivery. It also investigates the potential application of artificial intelligence and reinforcement learning to streamline these processes.
+
+The current methodology for addressing this challenge involves the use of a Vicon System \cite{website:Vicon}. However, the project's ultimate goal is to achieve complete autonomy by relying solely on onboard sensors, cameras, and computational resources. Currently, MATLAB simulations show that nonlinear model predictive control (NMPC) \cite{website:NLMPC} is able to effectively capture the states of the QDrone; however, the processing time required with this approach has not yet been tested alongside ROS and Gazebo \cite{website:ROSandGazebo}.
+
+\textcolor{red}{Update as you research more}
+
 \newpage
 \tableofcontents
 \newpage
