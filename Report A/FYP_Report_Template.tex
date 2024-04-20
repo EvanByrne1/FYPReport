@@ -62,7 +62,7 @@
 
 
 \begin{document}
-\title{Autonomous Object Evasion, and Capture Using the Quanser QDrone\\ \ \\
+\title{Autonomous Object Evasion, and Interception Using the Quanser QDrone\\ \ \\
 {\small Final Year Project Report - ENGG4801A \\May 2024}}
 \author[UoNMCHA]{Evan Byrne}
 \address[UoNMCHA]{
@@ -77,7 +77,7 @@ E-mail: \href{mailto:Evan.Byrne@uon.edu.au}{\textsf{Evan.Byrne@uon.edu.au}}}
 \vspace{-5mm}
 \section*{Abstract}
 \vspace{5mm}
-This report focuses on a project in which the Quanser QDrone \cite{website:Quanser} is required to detect an object and autonomously recognize and maneuver to either avoid or catch it. This project explores various control systems and advanced object detection capabilities of current unmanned aerial vehicles (UAVs), aiming to enhance trajectory estimation for practical applications such as automated package retrieval and delivery. It also investigates the potential application of artificial intelligence and reinforcement learning to streamline these processes.
+This report focuses on a project in which the Quanser QDrone \cite{website:Quanser} is required to detect an object, specifically a ball in this scenario, and autonomously recognize and manoeuvre to either avoid or intercept it. This project explores various control systems and advanced object detection capabilities of current unmanned aerial vehicles (UAVs), aiming to enhance trajectory estimation for practical applications such as automated package retrieval and delivery. It also investigates the potential application of artificial intelligence and reinforcement learning to streamline these processes.
 
 The current methodology for addressing this challenge involves the use of a Vicon System \cite{website:Vicon}. However, the project's ultimate goal is to achieve complete autonomy by relying solely on onboard sensors, cameras, and computational resources. Currently, MATLAB simulations show that nonlinear model predictive control (NMPC) \cite{website:NLMPC} is able to effectively capture the states of the QDrone; however, the processing time required with this approach has not yet been tested alongside ROS and Gazebo \cite{website:ROSandGazebo}.
 
@@ -95,21 +95,55 @@ To organise your introduction section you can use the following structure:
     \item \textbf{Proposal}: Discuss how you are going to address this problem. Use the literature to back-up your approach to the problem, or to highlight that what you are doing has not been done before
 \end{itemize}
 Here you need to sell why what you are doing is important, and what benefits will it bring if you are successful and solve the problem? 
-%
-\subsection{Subsection title}
-You can use subsections within any section of the report. 
-\subsection{Subsection title}
-Recall that you need at least two subsections per section.
-\subsubsection{Subsubsection 1}
-Do not use more than 2 levels of sub-sectioning.
-\subsubsection{Subsubsection 2}
-Do not use more than 2 levels of sub-sectioning.
 
-The rest of the report is organised as follows. Section~\ref{sec:Core Section} describes items related to the core content. Section~\ref{sec:Conclusion} concludes the report. Appendix~\ref{app:Table} shows an example of how to make a Table.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Core Section}\label{sec:Core Section}
+\section{Literature Review}
+\subsection{System Dynamics}
+\subsubsection{Quadrotor Dynamics}
+\subsubsection{Object Dynamics}
+\subsection{Control Strategy}
+\subsubsection{PD Control}
+\subsubsection{PID Control}
+\subsubsection{LQR Control}
+\subsubsection{MPC}
+\subsubsection{NMPC}
+\subsection{Trajectory Prediction}
+\subsubsection{Kalman Filter}
+\subsubsection{Extended Kalman Filter}
+\subsubsection{Unscented Kalman Filter}
+\subsection{Reinforcement Learning}
+\subsubsection{Model Based RL}
+\subsubsection{Model Free RL}
+\subsubsection{PPO(Proximal Policy Optimization)}
 
-\subsection{Mathematics}
+
+\section{Quadrotor System Modelling}
+\subsection{System Representation}
+\subsubsection{Assumptions}
+\subsubsection{Coordinates and Rotation Matricies}
+\subsubsection{States and Inputs}
+\subsection{Motor Equations}
+\subsection{Translational Dynamics}
+\subsection{Rotational Dynamics}
+\subsection{State Space Equations of Motion}
+
+\section{Object System Modelling}
+
+\section{Control Strategy}
+\subsection{Overview}
+\subsection{PID}
+\subsection{MPC}
+\subsection{NMPC}
+
+
+
+
+
+
+
+
 \LaTeX \ is very good for writing Mathematics. You can write mathematics in the middle of a sentence, like for example $y=m x + h$. Or you can use the \verb|equation| environment as indicated in \eqref{eq:EquationLine} below.
 \begin{equation}\label{eq:EquationLine}
     y=m x + h.
