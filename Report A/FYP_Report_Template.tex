@@ -7,6 +7,7 @@
 \usepackage{listings}
 \usepackage{subfig}
 \usepackage{hyperref}
+\usepackage{float}
 \usepackage[parfill]{parskip}   % For replacing paragraph indenting with a newline instead
 \usepackage{pdfpages}
 \usepackage[australian]{babel} % This line sets the language to Australian English
@@ -77,49 +78,68 @@ E-mail: \href{mailto:Evan.Byrne@uon.edu.au}{\textsf{Evan.Byrne@uon.edu.au}}}
 \vspace{-5mm}
 \section*{Abstract}
 \vspace{5mm}
-This report focuses on a project in which the Quanser QDrone \cite{website:Quanser} is required to detect an object, specifically a ball in this scenario, and autonomously recognize and manoeuvre to either avoid or intercept it. This project explores various control systems and advanced object detection capabilities of current unmanned aerial vehicles (UAVs), aiming to enhance trajectory estimation for practical applications such as automated package retrieval and delivery. It also investigates the potential application of artificial intelligence and reinforcement learning to streamline these processes.
-
-The current methodology for addressing this challenge involves the use of a Vicon System \cite{website:Vicon}. However, the project's ultimate goal is to achieve complete autonomy by relying solely on onboard sensors, cameras, and computational resources. Currently, MATLAB simulations show that nonlinear model predictive control (NMPC) \cite{website:NLMPC} is able to effectively capture the states of the QDrone; however, the processing time required with this approach has not yet been tested alongside ROS and Gazebo \cite{website:ROSandGazebo}.
+This report focuses on a project in which the Quanser QDrone \cite{website:Quanser} is required to detect an object, specifically a ball in this scenario, and autonomously recognize and manoeuvre to either avoid or intercept it. This project explores various control systems and advanced object detection capabilities of current unmanned aerial vehicles (UAVs), aiming to enhance trajectory estimation for practical applications such as automated package retrieval and delivery. 
+The current methodology for addressing this challenge involves the use of a Vicon System \cite{website:Vicon}. However, the project's ultimate goal is to achieve complete autonomy by relying solely on onboard sensors, cameras, and computational resources. Currently, MATLAB simulations show that nonlinear model predictive control (NMPC) \cite{website:NLMPC} is able to effectively capture the states of the QDrone. When coupling this with the ball trajectory as estimated by a Kalman Filter \cite{website:KalmanFilter}, simulations show the QDrone successfully intercepting the object.
 
 \textcolor{red}{Update as you research more}
 
 \newpage
 \tableofcontents
 \newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Introduction}
-To organise your introduction section you can use the following structure:
-\begin{itemize}
-    \item \textbf{Position}: Show there is a problem and that it is important to solve it.
-    \item \textbf{Problem}: Describe the specifics of the problem you are trying to address
-    \item \textbf{Proposal}: Discuss how you are going to address this problem. Use the literature to back-up your approach to the problem, or to highlight that what you are doing has not been done before
-\end{itemize}
-Here you need to sell why what you are doing is important, and what benefits will it bring if you are successful and solve the problem? 
+The utilization of UAVs has significantly expanded across various sectors, driven by enhancements in their design and control systems. This project specifically addresses the autonomous capabilities of the Quanser QDrone for object detection and interaction tasks, which are critical in fields such as automated delivery and emergency response. The challenge lies in enabling the QDrone to identify and respond to dynamic objects, such as a moving ball, using only its onboard computational tools, rather than relying solely on external systems like the Vicon System.
+
+Initially, however, this project leverages said Vicon System to provide accurate spatial tracking and support the development and testing of control algorithms. To overcome the required task the project explores the adaptation and integration of advanced control systems and object detection technologies that have been traditionally used in less dynamic settings. Employing nonlinear model predictive control (NMPC) and Kalman Filter algorithms, the project aims to enhance the drone's ability to make real-time decisions based on the trajectory data of moving objects. The ultimate goal is to develop a fully autonomous UAV system capable of performing complex manoeuvres without human intervention, thereby pushing the boundaries of what autonomous drones can achieve in practical applications. 
+
+This endeavour not only aims to advance the technological capabilities of UAVs but also to provide scalable solutions that could transform industries by enabling more sophisticated autonomous operations.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Literature Review}
 \subsection{System Dynamics}
 \subsubsection{Quadrotor Dynamics}
+All mathematical models for quadrotor UAVs depend on the blade orientation, which can be either a plus (+) configuration or a cross (X) configuration which can be seen in \ref{fig:}. The plus configuration aligns each rotor with the primary axes, resulting in symmetrical thrust distribution along these axes. This alignment allows for easier prediction and simplified control algorithms, making it an advantageous choice for straightforward control implementations and basic flight stability. This simplicity also introduces drawbacks, such as reduced manoeuvrability as well as increased complexity in sensor and camera placement. All mathematical models for quadrotor UAVs depend on the blade orientation, which can be either a plus (+) configuration or a cross (X) configuration. The plus configuration aligns each rotor with the primary axes, resulting in symmetrical thrust distribution along these axes. This alignment allows for easier prediction and simplified control algorithms, making it an advantageous choice for straightforward control implementations and basic flight stability. This simplicity also introduces drawbacks, such as reduced maneuverability and increased complexity in sensor and camera placement. Alternatively, the X configuration allows for easier sensor placement and better stability, maneuverability, and aerodynamic efficiency; however, these benefits come at the cost of more complex control algorithms \cite{article:CrossVsPlus}.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/SincPlot.pdf}
+    \caption{Quadrotor Orientation and Reference Frames}
+    \label{fig:yourlabel}
+  \end{figure}
+  
+
+
+Once a quadrotor orientation is established, the system dynamics can be derived. Quadrotors are six-degree-of-freedom (DOF) systems, encompassing three rotational and three translational movements. These movements are controlled using four individual thrust inputs, each dependent on the motor and blade on each arm. 
+For the majority of literature, such as \cite{website:KalmanFilter}, the torques and forces created from each thrust about the primary axes form the basis of the model. Although this is a common approach in modeling quadrotors, due to the complexity of the system, models can vary from quite low-fidelity models \cite{website:KalmanFilter} to extremely high-fidelity models \cite{website:KalmanFilter} that encompass additional forces such as gyroscopic and drag forces. These varying levels of model fidelity allow researchers and engineers to balance the need for accuracy with computational efficiency, depending on the specific application and result in the lower fidelity models being more prevalent.
+\newline
+\newline
+Regardless of the model's fidelity, an accurate representation of quadrotor dynamics necessitates the proper application of reference frames and the implementation of Euler-Newton and Euler-Lagrange equations. Reference frames are crucial for understanding the motion relative to different points of view, whether fixed or moving. The Euler-Newton method applies forces and torques to derive the equations of motion, while the Euler-Lagrange approach offers a generalized formulation ideal for capturing complex dynamics. These theoretical foundations are essential for developing robust models that can accurately predict and control the UAV's behavior under various conditions \cite{website:KalmanFilter}.
+\newline 
+\newline
+As previously mentioned, quadrotors are nonlinear systems which inherently result in nonlinear models. Due to this, many control algorithms require the system to be linearized. This linearization involves approximating the nonlinear dynamics around a specific operating point by taking the Jacobian \cite{website:KalmanFilter} thereby making it possible to apply linear control techniques. 
+
 \subsubsection{Object Dynamics}
+hola mi llamo es dora
+
+\newpage
 \subsection{Control Strategy}
+k
 \subsubsection{PD Control}
 \subsubsection{PID Control}
 \subsubsection{LQR Control}
 \subsubsection{MPC}
 \subsubsection{NMPC}
+\newpage
 \subsection{Trajectory Prediction}
 \subsubsection{Kalman Filter}
 \subsubsection{Extended Kalman Filter}
 \subsubsection{Unscented Kalman Filter}
-\subsection{Reinforcement Learning}
-\subsubsection{Model Based RL}
-\subsubsection{Model Free RL}
-\subsubsection{PPO(Proximal Policy Optimization)}
 
 
+\newpage
 \section{Quadrotor System Modelling}
+
 \subsection{System Representation}
 \subsubsection{Assumptions}
 \subsubsection{Coordinates and Rotation Matricies}
@@ -194,14 +214,7 @@ To import the figures from Matlab, follow the following procedure:
     \item Import it in LaTeX using the include graphics within a \verb|figure| environment.
 \end{enumerate}
 %
-\begin{figure}[ht]
-    \begin{center}
-        \includegraphics[width=.6\linewidth]{Figures/SincPlot}
-        \caption{Here goes the caption.}
-        \label{fig:Sinc}
-    \end{center}
-\end{figure}
-Figure~\ref{fig:Sinc} shows a shows a plot of the function $\sin(x)/x$. 
+
 
 If I need to make a simple diagram, I use powerpoint and select the drawing and save it as a pdf. For example, look at Figure~\ref{fig:MechaSys}.
 \begin{figure}[ht]
