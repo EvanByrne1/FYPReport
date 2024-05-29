@@ -285,49 +285,42 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 OUTPUT FYP_Report_Template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
+INPUT .\Figures\High Level Block Diagram.JPG
+INPUT .\Figures\High Level Block Diagram.JPG
+INPUT .\Figures\High Level Block Diagram.JPG
+INPUT .\Figures\High Level Block Diagram.JPG
+INPUT .\Figures\High Level Block Diagram.JPG
+INPUT .\Figures\High Level Block Diagram.JPG
+INPUT .\Figures\High Level Block Diagram.JPG
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
-INPUT .\Figures\SincPlot.pdf
-INPUT .\Figures\SincPlot.pdf
-INPUT .\Figures\SincPlot.pdf
-INPUT .\Figures\SincPlot.pdf
-INPUT .\Figures\SincPlot.pdf
-INPUT .\Figures\SincPlot.pdf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib6.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
-INPUT .\Figures\MechaSys.pdf
-INPUT .\Figures\MechaSys.pdf
-INPUT .\Figures\MechaSys.pdf
-INPUT .\Figures\MechaSys.pdf
-INPUT .\Figures\MechaSys.pdf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
-INPUT .\Code\serialtest.m
-INPUT .\Code\serialtest.m
-INPUT Code\serialtest.m
+INPUT .\Figures\animationwithlegend.JPG
+INPUT .\Figures\animationwithlegend.JPG
+INPUT .\Figures\animationwithlegend.JPG
+INPUT .\Figures\animationwithlegend.JPG
+INPUT .\Figures\animationwithlegend.JPG
+INPUT .\Figures\animationwithlegend.JPG
+INPUT .\Figures\animationwithlegend.JPG
+INPUT .\Figures\SimResults.JPG
+INPUT .\Figures\SimResults.JPG
+INPUT .\Figures\SimResults.JPG
+INPUT .\Figures\SimResults.JPG
+INPUT .\Figures\SimResults.JPG
+INPUT .\Figures\SimResults.JPG
+INPUT .\Figures\SimResults.JPG
 INPUT .\FYP_Report_Template.bbl
 INPUT .\FYP_Report_Template.bbl
 INPUT FYP_Report_Template.bbl
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex9.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx9.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT FYP_Report_Template.aux
 INPUT .\FYP_Report_Template.out
 INPUT .\FYP_Report_Template.out
@@ -335,22 +328,18 @@ INPUT C:\Users\Evan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm
 INPUT C:\Users\Evan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx9.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx9.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
@@ -361,6 +350,10 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmssbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmssbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmssi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmssi10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
