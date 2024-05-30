@@ -88,7 +88,7 @@ The current methodology for addressing this challenge involves the use of a Vico
 \section{Introduction}
 The utilization of UAVs has significantly expanded across various sectors, driven by enhancements in their design and control systems. This project specifically addresses the autonomous capabilities of the Quanser QDrone for object detection and interaction tasks, which are critical in fields such as automated delivery and emergency response. The challenge lies in enabling the QDrone to identify and respond to dynamic objects, such as a moving ball, using only its onboard computational tools, rather than relying solely on external systems like the Vicon System.
 
-Initially, however, this project leverages said Vicon System to provide accurate spatial tracking and support the development and testing of control algorithms. To overcome the required task the project explores the adaptation and integration of advanced control systems and object detection technologies that have been traditionally used in less dynamic settings. Employing nonlinear model predictive control (NMPC) and Kalman Filter algorithms, the project aims to enhance the drone's ability to make real-time decisions based on the trajectory data of moving objects. The ultimate goal is to develop a fully autonomous UAV system capable of performing complex manoeuvres without human intervention, thereby pushing the boundaries of what autonomous drones can achieve in practical applications. 
+Initially, this project leverages said Vicon System to provide accurate spatial tracking and support the development and testing of control algorithms. The project explores the adaptation and integration of advanced control systems and object detection technologies that have been traditionally used in less dynamic settings. Employing nonlinear model predictive control (NMPC) and Kalman Filter algorithms, the project aims to enhance the drone's ability to make real-time decisions based on the trajectory data of moving objects. The ultimate goal is to develop a fully autonomous UAV system capable of performing complex manoeuvres without human intervention, thereby pushing the boundaries of what autonomous drones can achieve in practical applications. 
 
 This endeavour not only aims to advance the technological capabilities of UAVs but also to provide scalable solutions that could transform industries by enabling more sophisticated autonomous operations.
 
@@ -100,7 +100,7 @@ This endeavour not only aims to advance the technological capabilities of UAVs b
 \subsection{System Dynamics}
 
 \subsubsection{Quadrotor Dynamics}
-All mathematical models for quadrotor UAVs depend on the blade orientation, which can be either a plus (+) configuration or a cross (X) configuration as seen in Figure.\ref{fig:QuadrotorConfigandRef}. The plus configuration aligns each rotor with the primary axes, resulting in symmetrical thrust distribution along these axes. This alignment allows for easier prediction and simplified control algorithms, making it an advantageous choice for straightforward control implementations and basic flight stability. This simplicity also introduces drawbacks, such as reduced manoeuvrability as well as increased complexity in sensor and camera placement. Alternatively, the X configuration allows for easier sensor placement and better stability, manoeuvrability, and aerodynamic efficiency; however, these benefits come at the cost of more complex control algorithms \textcolor{red}{\cite{article:CrossVsPlus}}.  
+All mathematical models for quadrotor UAVs depend on the blade orientation, which can be either a plus (+) configuration or a cross (X) configuration as seen in Figure.\ref{fig:QuadrotorConfigandRef}. The plus configuration aligns each rotor with the primary axes, resulting in symmetrical thrust distribution along these axes. This alignment allows for easier prediction and simplified control algorithms, making it an advantageous choice for straightforward control implementations and basic flight stability. This simplicity also introduces drawbacks, such as reduced manoeuvrability as well as increased complexity in sensor and camera placement. Alternatively, the X configuration allows for easier sensor placement and better stability, manoeuvrability, and aerodynamic efficiency; however, these benefits come at the cost of more complex control algorithms \cite{article:CrossVsPlus}.  
 
 \begin{figure}[H]
     \centering
@@ -177,12 +177,12 @@ Linear Quadratic Regulator (LQR) control is a fundamental optimal control strate
 The LQR control strategy leverages the quadratic cost function as shown in (\ref{quadraticCostEq}) to determine the optimal feedback control law. By minimizing this cost function, LQR ensures that the system's state remains close to the desired trajectory while using control inputs efficiently. 
 
 
-LQR is advantageous for quadrotor control due to its optimal control solution, robustness to disturbances, and guaranteed stability if the system is controllable. Its simplicity and computational efficiency make it suitable for real-time applications. However, LQR assumes linear system dynamics, which can be inaccurate for the highly nonlinear behaviour of quadrotors, particularly during aggressive maneuvers. This reliance on accurate models and fixed gains can limit its adaptability to changing conditions. As a result, more advanced nonlinear control methods are often preferred for handling complex scenarios. \cite{website:LQR}
+LQR is advantageous for quadrotor control due to its optimal control solution, robustness to disturbances, and guaranteed stability if the system is controllable. Its simplicity and computational efficiency make it suitable for real-time applications. However, LQR assumes linear system dynamics, which can be inaccurate for the highly nonlinear behaviour of quadrotors, particularly during aggressive manoeuvres. This reliance on accurate models and fixed gains can limit its adaptability to changing conditions. As a result, more advanced nonlinear control methods are often preferred for handling complex scenarios. \cite{website:LQR}
 
 
 \subsubsection{MPC Control}
 
-Model Predictive Control (MPC) is an advanced control strategy that optimizes control inputs by predicting future system behavior over a finite time horizon, making it suitable for complex systems like quadrotors. MPC minimizes a cost function, typically in the form:
+Model Predictive Control (MPC) is an advanced control strategy that optimizes control inputs by predicting future system behaviour over a finite time horizon, making it suitable for complex systems like quadrotors. MPC minimizes a cost function, typically in the form:
 
 \begin{equation}
 J = \sum_{k=0}^{N-1} \left( x[k]^T Q x[k] + u[k]^T R u[k] \right) + x[N]^T P x[N],
@@ -197,7 +197,7 @@ Without a prediction horizon (\( N = \infty \)), MPC reduces to Linear Quadratic
 
 \subsubsection{NMPC Control}
 
-Nonlinear Model Predictive Control (NMPC) extends the principles of MPC to handle nonlinear system dynamics, making it well-suited for the highly nonlinear behavior of quadrotors. Unlike MPC, which assumes linear dynamics, NMPC directly incorporates the nonlinearities of the system into the optimization problem. This is achieved by using nonlinear system models in the prediction of future states and in the formulation of the cost function and constraints.
+Nonlinear Model Predictive Control (NMPC) extends the principles of MPC to handle nonlinear system dynamics, making it well-suited for the highly nonlinear behaviour of quadrotors. Unlike MPC, which assumes linear dynamics, NMPC directly incorporates the nonlinearities of the system into the optimization problem. This is achieved by using nonlinear system models in the prediction of future states and in the formulation of the cost function and constraints.
 
 The NMPC cost function can be expressed as:
 
@@ -242,7 +242,7 @@ The high-level block diagram illustrated in Figure \ref{fig:HighLevelBlockDiagra
 In developing the quadrotor dynamics for the NMPC control system, several key assumptions were made to simplify the model and focus on the primary control objectives:
 
 \begin{itemize}
-    \item The quadrotor is modeled as a rigid structure with no flexible parts.
+    \item The quadrotor is modelled as a rigid structure with no flexible parts.
     \item It is assumed to be symmetrical around both the pitch and roll axes.
     \item Thrust and forces are considered to be directly proportional to the propeller speed.
     \item Drag is neglected.
@@ -256,7 +256,7 @@ These assumptions allow for a more tractable analysis and control design, focusi
 
 \subsubsection{Coordinates and Rotation Matrices}
 
-For the Quanser quadrotor model, I used a North-East-Down (NED) coordinate system, aligning the north and east axes between the rotors, considering sensor placement. In this system, the down direction is positive in the direction of gravity.-
+For the Quanser quadrotor model, a North-East-Down (NED) coordinate system was used, where the north and east axes were defined between the rotors, considering sensor placement. In this system, the down direction is positive in the direction of gravity.-
 
 To define the relationship between the body-fixed frame and the world frame, rotation matrices about the roll (\(\phi\)), pitch (\(\theta\)), and yaw (\(\psi\)) axes are used \cite{website:RotationMatricies}. These matrices are crucial for transforming vectors between frames.
 
@@ -306,12 +306,12 @@ The composite rotation matrix \(R\) is formed by multiplying these matrices:
     \end{equation}
     
 
-This matrix \(R\) is essential for transforming coordinates between the world and body frames, playing a significant role in accurately simulating the quadrotor's behavior and calculating forces and torques.
+This matrix \(R\) is essential for transforming coordinates between the world and body frames, playing a significant role in accurately simulating the quadrotor's behaviour and calculating forces and torques.
 
-By using the NED coordinate system and these rotation matrices, the relationship between the world frame and the body frame is clearly established, enabling precise modeling and control of the Quanser quadrotor.
+By using the NED coordinate system and these rotation matrices, the relationship between the world frame and the body frame is clearly established, enabling precise modelling and control of the Quanser quadrotor.
 
 \subsubsection{States and Inputs}
-To fully describe the condition of the system at any given time, a set of states must be assigned to encompass all the dynamic behavior. For this system, the states are defined as:
+To fully describe the condition of the system at any given time, a set of states must be assigned to encompass all the dynamic behaviour. For this system, the states are defined as:
 
 \begin{itemize}
     \item \text{N}: Position in the north direction (world frame).
@@ -330,7 +330,7 @@ To fully describe the condition of the system at any given time, a set of states
 
 These states collectively capture the position, orientation, and motion dynamics of the system and can be grouped into subsets depending on their effects. Specifically, \(\mathbf{X_n} = [N, E, D]\) represents the position, \(\mathbf{W_n} = [\phi, \theta, \psi]\) represents the orientation, \(\mathbf{\dot{X}_n} = [\dot{N}, \dot{E}, \dot{D}]\) represents the linear velocities, and \(\mathbf{\dot{W}_n} = [\dot{\phi}, \dot{\theta}, \dot{\psi}]\) represents the angular velocities. Using all of these variables the states of the system are \(\mathbf{x} = [\mathbf{X_n}, \mathbf{\dot{X}_n}, \mathbf{W_n}, \mathbf{\dot{W}_n}]\)
 
-Additionally, two crucial subgroups for system modeling are \(\mathbf{\dot{X}_B} = [u, v, w]\) and \(\mathbf{\dot{W}_B} = [p, q, r]\), the linear and angular velocities in the body coordinates. These are important because they allow for the transformation of velocities between the body and world frames as shown in Equations \ref{eq:velocity_transformation} and \ref{eq:angular_velocity_transformation} below \cite{HindawiDynamcis}:
+Additionally, two crucial subgroups for system modelling are \(\mathbf{\dot{X}_B} = [u, v, w]\) and \(\mathbf{\dot{W}_B} = [p, q, r]\), the linear and angular velocities in the body coordinates. These are important because they allow for the transformation of velocities between the body and world frames as shown in Equations \ref{eq:velocity_transformation} and \ref{eq:angular_velocity_transformation} below \cite{HindawiDynamcis}:
 
 \begin{equation}
 \mathbf{\dot{X}_n} = R_{bn} \mathbf{\dot{X}_B}
@@ -355,7 +355,7 @@ T_i = k_t \cdot \omega_i^2
 \label{eq:thrust}
 \end{equation}
 
-where \(T_i\) is the individual thrust produced by motor \(i\) (i is the ith motor for example motor four is i = 4) in the body frame, \(k_t\) is the thrust coefficient, and \(\omega_i\) is the angular velocity of motor \(i\). The thrust coefficient \(k_t\) depends on the shape of the propeller and was determined through system identification performed by Quanser for their specific motors. The thrust generated by each motor directly influences the quadrotor's ability to lift, maneuver, and stabilize.
+where \(T_i\) is the individual thrust produced by motor \(i\) (i is the ith motor for example motor four is i = 4) in the body frame, \(k_t\) is the thrust coefficient, and \(\omega_i\) is the angular velocity of motor \(i\). The thrust coefficient \(k_t\) depends on the shape of the propeller and was determined through system identification performed by Quanser for their specific motors. The thrust generated by each motor directly influences the quadrotor's ability to lift, manoeuvre, and stabilize.
 \subsection{Translational Dynamics}
 To derive the translational equations of motion, Newton's second law of motion, \( F = ma \), is utilized in global coordinates. This can be expressed as:
 
@@ -364,7 +364,7 @@ To derive the translational equations of motion, Newton's second law of motion, 
 \label{eq:newton_law}
 \end{equation}
 
-In this equation, \(\sum \mathbf{F}\) represents the sum of all external forces acting on the system, \(m\) denotes the mass of the system, and \(\mathbf{\ddot{X}}\) is the linear acceleration of the system. By rearranging this equation we can solve for linear accelration of the system.
+In this equation, \(\sum \mathbf{F}\) represents the sum of all external forces acting on the system, \(m\) denotes the mass of the system, and \(\mathbf{\ddot{X}}\) is the linear acceleration of the system. By rearranging this equation we can solve for linear acceleration of the system.
 
 The sum of forces on the system can be defined as:
 
@@ -389,14 +389,14 @@ Where \( R \) is the rotation matrix required to transform the force from body t
 After deriving these expressions the linear acceleration of the quadrotor can be found \cite{website:Quadrotorsystemmodeling}.
 
 \subsection{Rotational Dynamics}
+
 \subsection{State Space Equations of Motion}
 
 \section{NMPC}
 
-Choosing Nonlinear Model Predictive Control (NMPC) for my drone project, where the objective is to catch a thrown ball, provides several critical advantages over other control methods. NMPC's ability to incorporate constraints directly into the control design is particularly valuable. By defining specific constraints on the drone's motor velocities and their rates of change, I can ensure safe and efficient operation within the drone's physical limits. The use of a prediction horizon in NMPC allows the controller to use the ball's estimated trajectory, provided by external systems like a Kalman filter, as a reference. This enables the drone to plan its movements proactively, enhancing the likelihood of a successful catch.
+Choosing Nonlinear Model Predictive Control (NMPC) for the drone project, where the objective is to catch a thrown ball, provides several critical advantages over other control methods. NMPC's ability to incorporate constraints directly into the control design is particularly valuable. By defining specific constraints on the drone's motor velocities and their rates of change, safe and efficient operation within the drone's physical limits can be ensured. The use of a prediction horizon in NMPC allows the controller to use the ball's estimated trajectory, provided by external systems like a Kalman filter, as a reference. This enables the drone to plan its movements proactively, enhancing the likelihood of a successful catch.
 
-The control horizon enables fine-tuning of how far ahead the controller looks when making decisions, ensuring a balance between responsiveness and stability. This is crucial for quickly adapting to the ball's trajectory while maintaining controlled flight. The ability to precisely adjust the weighting of each state variable in NMPC is also essential, as it allows me to prioritize certain aspects of the drone's behavior, such as position accuracy and control effort.
-
+The control horizon enables fine-tuning of how far ahead the controller looks when making decisions, ensuring a balance between responsiveness and stability. This is crucial for quickly adapting to the ball's trajectory while maintaining controlled flight. The ability to precisely adjust the weighting of each state variable in NMPC is also essential, as it allows prioritization of certain aspects of the drone's behaviour, such as position accuracy and control effort.
 \subsection{Implementation}
 
 In implementing the NMPC for the drone within a simulation environment, specific values were carefully chosen for the controller's weights and constraints to optimize its performance for the task of catching a thrown ball. The controller is configured with a prediction horizon of 30 steps and a control horizon of 29 steps, ensuring a fast response to the dynamic task. The time step for the controller is set to 0.01 seconds, providing high-frequency updates for precise control.
@@ -412,10 +412,9 @@ By carefully setting these parameters, the NMPC is tailored to provide robust an
 \section{Simulation}
 \subsection{Setup and Validation}
 
-After establishing the dynamics, a simulation was created to validate the controller and system performance. This simulation initializes the drone's parameters and specifies the starting states. The main simulation loop uses the ODE45 solver \cite{website:KalmanFilter} to get state updates and the NMPC toolbox \cite{website:NMPCSIM} to drive the control variables.
-The first test to check the dynamics involved manually setting all inputs to 4.9, which balances out gravity and allows the drone to hover, confirming the dynamics were correctly modeled. Following this, a simple trajectory was set for the drone to follow. The drone successfully tracked the trajectory, verifying the controller's effectiveness. 
+After establishing the dynamics, a simulation was created to validate the controller and system performance. This simulation initializes the drone's parameters and specifies the starting states. The main simulation loop uses the ODE45 solver \cite{website:KalmanFilter} to get state updates and the NMPC toolbox \cite{website:NMPCSIM} to drive the control variables. The first test to check the dynamics involved manually setting all inputs to 4.9, which balances out gravity and allows the drone to hover, confirming the dynamics were correctly modeled. Following this, a simple trajectory was set for the drone to follow. The drone successfully tracked the trajectory, verifying the controller's effectiveness.
 
-The assessment of performance  was not only done through graphical information but also visually through animation. By graphing the states and inputs and animating the drone's movement, I confirmed the system's correct behavior and control responses. This successful validation allowed me to proceed to simulating the drone catching a ball.
+The assessment of performance was done not only through graphical information but also visually through animation. By graphing the states and inputs and animating the drone's movement, the system's correct behavior and control responses were confirmed. This successful validation allowed the progression to simulating the drone catching a ball.
 
 \subsection{Ball Trajectory and Assumptions}
 
@@ -434,15 +433,15 @@ The initial conditions for the ball's trajectory can be visualized in Figure \re
 
 Assuming perfect projectile motion for simplicity, the trajectory of the ball is calculated, and the time of flight is determined based on the initial conditions and the ball's physical properties. If the calculated time of flight is infeasible for the drone to intercept the ball (less than 1 second), the simulation stops, indicating that the scenario is unrealistic.
 
-The initial velocity, angles, and resulting trajectory provide a reference for the NMPC controller, which is tasked with maneuvering the drone to intercept the ball. This setup allows for the testing and validation of the drone's ability to follow and intercept the ball's path accurately.
+The initial velocity, angles, and resulting trajectory provide a reference for the NMPC controller, which is tasked with manoeuvring the drone to intercept the ball. This setup allows for the testing and validation of the drone's ability to follow and intercept the ball's path accurately.
 
-The ball's trajectory is visualized along with the drone's movement in the simulation, allowing for both graphical analysis, as shown in Figure \ref{fig:simResults}, and animation of the interception process. This dual approach ensures that the system's behavior can be thoroughly assessed, providing insights into the performance of the controller and the dynamics of the drone in various interception scenarios.
+The ball's trajectory is visualized along with the drone's movement in the simulation, allowing for both graphical analysis, as shown in Figure \ref{fig:simResults}, and animation of the interception process. This dual approach ensures that the system's behaviour can be thoroughly assessed, providing insights into the performance of the controller and the dynamics of the drone in various interception scenarios.
 
 
 \subsection{Results}
 The simulation effectively allows for tuning and testing of the NMPC controller designed for the drone to intercept a thrown ball. Initial results indicate that while the controller is operational, there is a need for further fine-tuning to improve performance.
 
-Examining the simulation results, it is evident that the controller is currently experiencing issues with overshooting and fine position control on the interception point. This behavior suggests that the drone might be heading directly to the predicted interception point rather than adjusting its trajectory to catch the ball more effectively.
+Examining the simulation results, it is evident that the controller is currently experiencing issues with overshooting and fine position control on the interception point. This behaviour suggests that the drone might be heading directly to the predicted interception point rather than adjusting its trajectory to catch the ball more effectively.
 
 \begin{figure}[H]
     \centering
@@ -457,7 +456,7 @@ Overall however, the simulation is a success and will be a valuable tool as the 
 
 Moving forward, the focus will be on enhancing the drone's capability to capture the ball with a more sophisticated strategy. Instead of simply intercepting the ball at a point in space, the goal is for the drone to anticipate the ball's trajectory and position itself at a point on the trajectory before the ball arrives. This approach will enable the drone to move down and perform a more controlled catch rather than a mere interception. Achieving this requires the drone to have a better understanding of the ball's location and its future path.
 
-To attain the fine control necessary for this advanced maneuver, it may be essential to implement a custom cost function within the NMPC framework. This custom cost function will allow for more precise tuning of the controller, emphasizing the importance of positioning and timing in the catching process. Additionally, extensive tuning of the controller's parameters will be required to ensure optimal performance.
+To attain the fine control necessary for this advanced manoeuvre, it may be essential to implement a custom cost function within the NMPC framework. This custom cost function will allow for more precise tuning of the controller, emphasizing the importance of positioning and timing in the catching process. Additionally, extensive tuning of the controller's parameters will be required to ensure optimal performance.
 
 Once the drone is capable of gently and accurately catching the ball, the next step will be to integrate an obstacle avoidance feature. This feature will involve generating a trajectory that takes the drone away from the ball instead of towards it, thereby avoiding the ball. This requires the drone to not only track the ball's position but also dynamically adjust its path to avoid a potential collision. Successfully integrating this capability will make the system more versatile and adaptable to different scenarios.
 
@@ -467,9 +466,8 @@ These advancements will significantly enhance the drone's capabilities, making i
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliographystyle{harvard}
+\bibliographystyle{ieeetr}
 \bibliography{main} % This is the .bib file where the bibliography database is stored
-
 \appendix
 \newpage
 

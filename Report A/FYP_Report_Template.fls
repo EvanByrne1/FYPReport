@@ -202,9 +202,6 @@ INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\FYP_Report_Template.aux
-INPUT .\FYP_Report_Template.aux
-INPUT FYP_Report_Template.aux
 OUTPUT FYP_Report_Template.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -216,12 +213,6 @@ INPUT C:\Program Files\MiKTeX\tex\latex\grfext\grfext.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\FYP_Report_Template.out
-INPUT .\FYP_Report_Template.out
-INPUT FYP_Report_Template.out
-INPUT FYP_Report_Template.out
-INPUT .\FYP_Report_Template.out
-INPUT .\FYP_Report_Template.out
 OUTPUT FYP_Report_Template.out
 INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bookmark.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bookmark.sty
@@ -251,6 +242,9 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
@@ -260,12 +254,19 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Users\Evan\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
-INPUT .\FYP_Report_Template.toc
-INPUT .\FYP_Report_Template.toc
-INPUT FYP_Report_Template.toc
+OUTPUT FYP_Report_Template.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
+INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
@@ -283,15 +284,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-OUTPUT FYP_Report_Template.toc
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
-INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
-INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
-INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
-INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
-INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
-INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
-INPUT .\Figures\QuadrotorRefFrameandConfig.JPG
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT .\Figures\High Level Block Diagram.JPG
 INPUT .\Figures\High Level Block Diagram.JPG
@@ -300,7 +292,6 @@ INPUT .\Figures\High Level Block Diagram.JPG
 INPUT .\Figures\High Level Block Diagram.JPG
 INPUT .\Figures\High Level Block Diagram.JPG
 INPUT .\Figures\High Level Block Diagram.JPG
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT .\Figures\animationwithlegend.JPG
@@ -321,6 +312,7 @@ INPUT .\FYP_Report_Template.bbl
 INPUT .\FYP_Report_Template.bbl
 INPUT FYP_Report_Template.bbl
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT FYP_Report_Template.aux
 INPUT .\FYP_Report_Template.out
 INPUT .\FYP_Report_Template.out
